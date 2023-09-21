@@ -23,6 +23,9 @@ const IndexPage = () => {
       <Link to="/profile001a">
         <p>Hello</p>
       </Link>
+      <Link to="/profile001m">
+        <p>Hello</p>
+      </Link>
     </main>
   );
 };

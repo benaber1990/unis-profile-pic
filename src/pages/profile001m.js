@@ -4,14 +4,22 @@ import HomeCopy1 from "../../miscComps/HomeCopy1";
 import HomeTiles from "../../miscComps/HomeTiles";
 import HomeCTA from "../../miscComps/HomeCTA";
 import HomeGallery from "../../miscComps/HomeGallery";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import HomeGalleryM from "../../miscComps/HomeGalleryM";
+import logoImage from "../images/logo.png";
+import LockedCards from "../../miscComps/LockedCards";
 
 const pageStyles = {
   color: "#232129",
   padding: 24,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
   backgroundColor: COLORS.dark,
-  borderRadius: 12,
+  // borderRadius: 12,
   paddingTop: 10,
+  marginTop: -10,
+  marginLeft: -10,
+  marginRight: -10,
 };
 
 const headerCardStyles = {
@@ -24,18 +32,16 @@ const headerCardStyles = {
 
 const InfoCardStyles = {
   backgroundColor: COLORS.grey,
-  padding: 20,
   borderRadius: 12,
-  paddingRight: 160,
-  paddingLeft: 40,
-  marginLeft: 30,
   width: "100%",
+  marginBottom: 20,
+  paddingTop: 15,
 };
 
 const sideCompStyles = {
   backgroundColor: COLORS.grey,
   borderRadius: 12,
-  width: "30%",
+
   paddingTop: 30,
   paddingLeft: 20,
   color: "white",
@@ -74,85 +80,61 @@ const HeaderBottomRow = () => (
       marginTop: 20,
       display: "flex",
       alignItems: "center",
-      justifyContent: "space-between",
+      justifyContent: "center",
       borderRadius: 12,
       border: "2px solid white",
+      paddingTop: 20,
+      paddingBottom: 20,
     }}
   >
     {/* Column A */}
-    <div style={{ display: "flex" }}>
-      <div
-        style={{
-          display: "flex",
-          color: "white",
-          alignItems: "flex-end",
-        }}
-      >
-        <div
-          style={{
-            marginLeft: 30,
-            marginRight: 6,
-            fontSize: 22,
-            fontWeight: "700",
-          }}
-        >
-          2934{" "}
-        </div>
-        <div style={{ marginBottom: 3, color: "lightgrey" }}>friends</div>
-      </div>
 
-      <div
-        style={{
-          display: "flex",
-          // color: "white",
-          alignItems: "flex-end",
-          marginLeft: 30,
-        }}
-      >
-        <div
-          style={{
-            marginRight: 6,
-            fontSize: 22,
-            fontWeight: "700",
-            color: "white",
-          }}
-        >
-          18{" "}
-        </div>
-        <div style={{ marginBottom: 3, color: "lightgrey" }}>projects</div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          // color: "white",
-          alignItems: "flex-end",
-          marginLeft: 30,
-        }}
-      >
-        <div
-          style={{
-            marginRight: 6,
-            fontSize: 22,
-            color: "white",
-            fontWeight: "700",
-          }}
-        >
-          8{" "}
-        </div>
-        <div style={{ marginBottom: 3, color: "lightgrey" }}>years exp</div>
-      </div>
-    </div>
-
-    {/* Column B */}
     <div
       style={{
-        marginRight: 30,
+        display: "flex",
+        color: "white",
+        alignItems: "flex-end",
       }}
     >
-      <p style={{ fontWeight: "700", color: COLORS.mainGreen }}>
-        UNIS Verified
-      </p>
+      <div
+        style={{
+          // marginLeft: 30,
+          marginRight: 6,
+          fontSize: 22,
+          fontWeight: "700",
+        }}
+      >
+        2934{" "}
+      </div>
+      <div style={{ marginBottom: 3, color: "lightgrey", marginRight: 10 }}>
+        friends
+      </div>
     </div>
+
+    <div
+      style={{
+        display: "flex",
+        // color: "white",
+        alignItems: "flex-end",
+        marginLeft: 20,
+      }}
+    >
+      <div
+        style={{
+          marginRight: 6,
+          fontSize: 22,
+          fontWeight: "700",
+          color: "white",
+        }}
+      >
+        18{" "}
+      </div>
+      <div style={{ marginBottom: 3, color: "lightgrey" }}>projects</div>
+    </div>
+
+    <p style={{ color: "white", marginLeft: 40 }}>
+      <FontAwesomeIcon icon={faUserPlus} color={COLORS.mainGreen} size="lg" />
+    </p>
   </div>
 );
 
@@ -176,12 +158,12 @@ const HeaderComp = () => (
             "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           }
           style={{
-            height: 120,
-            width: 120,
-            borderRadius: 60,
-            marginRight: 30,
+            height: 80,
+            width: 80,
+            borderRadius: 40,
+            marginRight: 20,
             border: "2px solid white",
-            marginLeft: 60,
+            marginLeft: 20,
             marginBottom: 10,
             objectFit: "cover",
           }}
@@ -207,7 +189,27 @@ const HeaderComp = () => (
 
 const SideComp = () => (
   <div style={sideCompStyles}>
-    <text>Side Comp</text>
+    <h4
+      style={{
+        color: "lightgrey",
+        marginLeft: 10,
+        fontSize: 18,
+        marginTop: 5,
+      }}
+    >
+      <span style={{ color: COLORS.mainGreen }}>UNIS Hub:</span> Joseph's Latest
+      Status
+    </h4>
+
+    <p style={{ color: COLORS.lightGreen, marginLeft: 10, marginRight: 20 }}>
+      We're in need of a class 2 HGV driver asap. Message me if interested!
+    </p>
+
+    <p style={{ color: "lightgrey", marginLeft: 10, marginRight: 20 }}>
+      24 minutes ago from <span style={{ fontWeight: "600" }}>Leicester</span>
+    </p>
+
+    <div style={{ height: 20 }} />
   </div>
 );
 
@@ -222,21 +224,18 @@ const InfoItem = ({ label, val }) => (
 
 const InfoCard = () => (
   <div style={InfoCardStyles}>
-    <h4 style={{ color: "lightgrey" }}>
+    <h4 style={{ color: "lightgrey", marginLeft: 15, fontSize: 18 }}>
       <span style={{ color: COLORS.mainGreen }}>UNIS</span> Profile Info
     </h4>
 
     {/* Info */}
-    <div>
+    <div style={{ paddingLeft: 15, paddingBottom: 15 }}>
       <InfoItem label="Location:" val="Liverpool" />
       <InfoItem label="Level:" val="Expert" />
-      <InfoItem
-        label="Primary Skills:"
-        val="Engineering, Structural, Planning"
-      />
+      <InfoItem label="Skills:" val="Engineering, Structural, Planning" />
       <InfoItem label="Age:" val="36" />
       <InfoItem label="Gender:" val="Male" />
-      <InfoItem label="Location:" val="Liverpool" />
+      <InfoItem label="Work Status:" val="Employed Full Time" />
     </div>
   </div>
 );
@@ -244,7 +243,7 @@ const InfoCard = () => (
 const MarketingCard = () => (
   <div style={marketingCardStyles}>
     <div style={{ justifyContent: "flex-start" }}>
-      <h2 style={{ color: COLORS.mainGreen, fontSize: 36 }}>
+      <h2 style={{ color: COLORS.mainGreen, fontSize: 28 }}>
         A Fast, Simple & Secure Way to Manage Your Construction Company
       </h2>
       <div style={{ fontWeight: "600" }}>
@@ -252,35 +251,34 @@ const MarketingCard = () => (
         need to manage your team, projects and paperwork
       </div>
 
-      <div
-        style={{
-          backgroundColor: COLORS.mainGreen,
-          alignSelf: "flex-start",
-          display: "flex",
-          paddingLeft: 10,
-          paddingRight: 10,
-          width: 100,
-          paddingTop: 8,
-          paddingBottom: 8,
-          marginTop: 12,
-          borderRadius: 7,
-          cursor: "pointer",
-          fontSize: 14,
-          fontWeight: "700",
-        }}
-      >
-        Get More Info
+      <div style={{ alignSelf: "flex-start", display: "flex" }}>
+        <div
+          style={{
+            backgroundColor: COLORS.mainGreen,
+            alignSelf: "flex-start",
+            display: "flex",
+            paddingLeft: 15,
+            paddingRight: 15,
+            paddingTop: 12,
+            paddingBottom: 12,
+            marginTop: 12,
+            borderRadius: 7,
+            cursor: "pointer",
+            fontSize: 14,
+            fontWeight: "700",
+            textAlign: "center",
+          }}
+        >
+          Get More Info
+        </div>
       </div>
     </div>
   </div>
 );
 
 const Logo = () => (
-  <div style={{ marginLeft: 40 }}>
-    <img
-      src="https://lh3.googleusercontent.com/pw/AIL4fc_uzbWK1Nc6cBRVolP7LuqlBbCZ0acViPsGoHcXaOtwcszpEgC6wGkc25yokZgc3a5o3W1fbkgADKVByx_JK4ryUkofxkOAi7FkS8ejkIbsPdsLNzuiXc7_6Bd-DB4Qg-Fk6ohn8rwTtBepRb72RTMWOMcxAE3cdMJq7GjWZTeDZ78jNkvmJZ0H09Y6t8egZDJ_3_BYl00QYsCXsZdop-G60ob0YdYDoMD3NNaYDpWYy14OA_1Us3S26bd4bzfR5EYlaTqENW0HZNpzkVHJSMfeQbzh_NBXsYJi-q3xeDQgRivbeCKzBL1Ppxx-BJ5abzsTN0IYYcI0yeICi0EoqIrw5Meh1UYeVWCNP171SswDjnweuMesXaxPY-tyqUmDMC9oQ5bVlui0Z34U28a3tV1EjD4magHJ41kTv7vXfBc8_xCrg9iwujAz5q9fmLPcQsPujNSMqfiQc30MrC5XR5IvB4SvLSX-a9bjJdme2pSlJw0SgvAJ7vV0yrnWmkjxrq9vSJBtqtX_Ko72gK7ykddTXjBxXlXRjEXRmVdCEP62aunuEdxTZdWs9k82AVUP8edQMAbtrUIAZl9PeeEfhdk8yO6GsCVNi5GjI5ootJE_SkdBQh7Aw07QWdHxk189FEMVSkvjJCnqZ1SyxHO8GZg8jYmOJDLCUMS4hpjm3py98FqCCo1_H50KPHkgd2p1t9ESa0BJkr5jSoyO25TN3x1qhVDqM7Pr0Qn9LRtHrWewaE0OP5XkslkU6AvuAwmTaKXDZ42Ot-fW4T2UZRLu94ky0sm9vKicsZ8xp5J1pv0VdLvrUrHgWf0vX5bi4rOH3CzBC9GCd0Z0ZFqPBy3FIUbaj9xXE74t7vbBGS6fBh20z7rcnVx4y69jRss0klP5zsIxkLkjbTvsL71_RZb6Hk60q0zH6K0wf-lj5yYtLSuSQim2zKoKgt5QPGWx=s328-no?authuser=0"
-      style={{ height: 80, width: 80, marginTop: 20 }}
-    />
+  <div style={{}}>
+    <img src={logoImage} style={{ height: 80, width: 80 }} />
   </div>
 );
 
@@ -290,6 +288,7 @@ const TopBar = () => (
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
+      marginTop: 20,
     }}
   >
     <Logo />
@@ -301,8 +300,8 @@ const TopBar = () => (
         paddingLeft: 24,
         cursor: "pointer",
         display: "flex",
-        paddingTop: "2px",
-        paddingBottom: "2px",
+
+        // paddingBottom: "2px",
         // paddingTop: 4,
         // paddingBottom: 4,
       }}
@@ -312,7 +311,7 @@ const TopBar = () => (
   </div>
 );
 
-export default function Profile001a() {
+export default function Profile001m() {
   return (
     <div style={pageStyles}>
       {/* Top Bar */}
@@ -322,13 +321,13 @@ export default function Profile001a() {
       <HeaderComp />
 
       {/* Info Card */}
-      <div style={{ display: "flex", justifyContent: "center", marginTop: 40 }}>
-        <SideComp />
+      <div style={{ justifyContent: "center", marginTop: 40 }}>
         <InfoCard />
+        <SideComp />
       </div>
 
       {/* Gallery */}
-      <HomeGallery />
+      <HomeGalleryM />
 
       <HomeCopy1 />
 
@@ -337,9 +336,28 @@ export default function Profile001a() {
         <MarketingCard />
       </div>
 
-      <HomeTiles />
+      <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
+        <h4 style={{ color: "white", fontSize: 24, marginBottom: -40 }}>
+          View Joseph's Cards
+        </h4>
+      </div>
+      <LockedCards />
+      <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
+        <h4 style={{ color: "white", fontSize: 24 }}>Get UNIS to view cards</h4>
+      </div>
 
+      <p style={{ color: "white", textAlign: "center", marginTop: -10 }}>
+        Real-Time Compliance
+      </p>
+      <p style={{ color: "white", textAlign: "center", marginTop: -10 }}>
+        View All Cards & Credentials
+      </p>
+      <p style={{ color: "white", textAlign: "center", marginTop: -10 }}>
+        Instant Access to Your Team's Information
+      </p>
       <HomeCTA />
+
+      <div style={{ height: 60 }} />
     </div>
   );
 }
